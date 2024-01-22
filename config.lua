@@ -2,10 +2,10 @@ Config = {}
 Config.UseTarget = GetConvar('UseTarget', 'false') == 'true' -- Use qb-target interactions (don't change this, go to your server.cfg and add setr UseTarget true)
 Config.MinimalDoctors = 2                                    -- How many players with the ambulance job to prevent the hospital check-in system from being used
 Config.DocCooldown = 1                                       -- Cooldown between doctor calls allowed, in minutes
-Config.WipeInventoryOnRespawn = true                         -- Enable or disable removing all the players items when they respawn at the hospital
+Config.WipeInventoryOnRespawn = false                         -- Enable or disable removing all the players items when they respawn at the hospital
 Config.Helicopter = 'polmav'                                 -- Helicopter model that players with the ambulance job can use
-Config.BillCost = 2000                                       -- Price that players are charged for using the hospital check-in system
-Config.DeathTime = 300                                       -- How long the timer is for players to bleed out completely and respawn at the hospital
+Config.BillCost = 1000                                       -- Price that players are charged for using the hospital check-in system
+Config.DeathTime = 1800                                       -- How long the timer is for players to bleed out completely and respawn at the hospital
 Config.ReviveInterval = 360                                  -- How long the timer is for players to revive a player in laststand
 Config.MinimumRevive = 300                                   -- How long the timer is for players to revive a player in laststand
 Config.PainkillerInterval = 60                               -- Set the length of time painkillers last (per one)
@@ -14,7 +14,7 @@ Config.ArmorDamage = 5                                       -- Minumum damage d
 Config.ForceInjury = 35                                      -- Maximum amount of damage a player can take before limb damage & effects are forced to occur
 Config.AlwaysBleedChance = 70                                -- Set the chance out of 100 that if a player is hit with a weapon, that also has a random chance, it will cause bleeding
 Config.MessageTimer = 12                                     -- How long it will take to display limb/bleed message
-Config.AIHealTimer = 20                                      -- How long it will take to be healed after checking in, in seconds
+Config.AIHealTimer = 60                                      -- How long it will take to be healed after checking in, in seconds
 Config.BleedTickRate = 30                                    -- How much time, in seconds, between bleed ticks
 Config.BleedMovementTick = 10                                -- How many seconds is taken away from the bleed tick rate if the player is walking, jogging, or sprinting
 Config.BleedMovementAdvance = 3                              -- How much time moving while bleeding adds
@@ -99,9 +99,26 @@ Config.AuthorizedVehicles = { -- Grade is key, don't add same vehicle in multipl
 Config.Items = { -- Grade is key, don't add same item in multiple grades. Higher rank can see lower
     [0] = {
         { name = 'radio',                   price = 0, amount = 50, info = {}, type = 'item' },
-        { name = 'bandage',                 price = 0, amount = 50, info = {}, type = 'item' },
-        { name = 'painkillers',             price = 0, amount = 50, info = {}, type = 'item' },
-        { name = 'firstaid',                price = 0, amount = 50, info = {}, type = 'item' },
+        { name = 'field_dressing',          price = 0, amount = 50, info = {}, type = 'item' },
+        { name = 'packing_bandage',         price = 0, amount = 50, info = {}, type = 'item' },
+        { name = 'elastic_bandage',         price = 0, amount = 50, info = {}, type = 'item' },
+        { name = 'quickclot',               price = 0, amount = 50, info = {}, type = 'item' },
+        { name = 'blood_100',               price = 0, amount = 50, info = {}, type = 'item' },
+        { name = 'blood_250',               price = 0, amount = 50, info = {}, type = 'item' },
+        { name = 'blood_500',               price = 0, amount = 50, info = {}, type = 'item' },
+        { name = 'blood_750',               price = 0, amount = 50, info = {}, type = 'item' },
+        { name = 'blood_1000',              price = 0, amount = 50, info = {}, type = 'item' },
+        { name = 'morphine',                price = 0, amount = 50, info = {}, type = 'item' },
+        { name = 'epinephrine',             price = 0, amount = 50, info = {}, type = 'item' },
+        { name = 'emergency_revive_kit',    price = 0, amount = 50, info = {}, type = 'item' },
+        { name = 'defibrillator',           price = 0, amount = 50, info = {}, type = 'item' },
+        { name = 'surgical_kit',            price = 0, amount = 50, info = {}, type = 'item' },
+        { name = 'tourniquet',              price = 0, amount = 50, info = {}, type = 'item' },
+        { name = 'ecg_monitor',             price = 0, amount = 50, info = {}, type = 'item' },
+        { name = 'fentanyl',                price = 0, amount = 50, info = {}, type = 'item' },
+        { name = 'propofol_100',            price = 0, amount = 50, info = {}, type = 'item' },
+        { name = 'propofol_250',            price = 0, amount = 50, info = {}, type = 'item' },
+        { name = 'bodybag',                 price = 0, amount = 50, info = {}, type = 'item' },
         { name = 'weapon_flashlight',       price = 0, amount = 50, info = {}, type = 'item' },
         { name = 'weapon_fireextinguisher', price = 0, amount = 50, info = {}, type = 'item' },
     }

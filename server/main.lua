@@ -376,7 +376,8 @@ QBCore.Commands.Add('heal', Lang:t('info.heal_player'), {}, false, function(sour
 	end
 end)
 
-QBCore.Commands.Add('revivep', Lang:t('info.revive_player'), {}, false, function(source, _)
+--removed by pamela for visn are
+--[[QBCore.Commands.Add('revivep', Lang:t('info.revive_player'), {}, false, function(source, _)
 	local src = source
 	local Player = QBCore.Functions.GetPlayer(src)
 	if Player.PlayerData.job.name == 'ambulance' then
@@ -384,7 +385,25 @@ QBCore.Commands.Add('revivep', Lang:t('info.revive_player'), {}, false, function
 	else
 		TriggerClientEvent('QBCore:Notify', src, Lang:t('error.not_ems'), 'error')
 	end
-end)
+end)]]
+
+--added by pamela for visn areaSize
+QBCore.Commands.Add("revive", Lang:t('info.revive_player_a'), {{name = "id", help = Lang:t('info.player_id')}}, false, function(source, args)
+	local src = source
+	if args[1] then
+		local Player = QBCore.Functions.GetPlayer(tonumber(args[1]))
+		if Player then
+			TriggerClientEvent('hospital:client:Revive', Player.PlayerData.source)
+			TriggerClientEvent('visn_are:resetHealthBuffer', Player.PlayerData.source)
+		else
+			TriggerClientEvent('QBCore:Notify', src, Lang:t('error.not_online'), "error")
+		end
+	else
+		TriggerClientEvent('hospital:client:Revive', src)
+		TriggerClientEvent('visn_are:resetHealthBuffer', src)
+	end
+end, "admin")
+--till here
 
 QBCore.Commands.Add('revive', Lang:t('info.revive_player_a'), { { name = 'id', help = Lang:t('info.player_id') } }, false, function(source, args)
 	local src = source

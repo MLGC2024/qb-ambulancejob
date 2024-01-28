@@ -63,7 +63,7 @@ Config.Locations = {                -- Edit the various interaction points for p
         [1] = vector3(298.74, -599.33, 43.29),
     },
     ['stash'] = {
-        [1] = vector3(309.78, -596.6, 43.29),
+        [1] = vector3(306.74, -601.81, 43.28),
     },
     ['beds'] = {
         { coords = vector4(353.1, -584.6, 43.11, 152.08),    taken = false, model = 1631638868 },
@@ -134,8 +134,6 @@ Config.Items = { -- Grade is key, don't add same item in multiple grades. Higher
         { name = 'stretcher3',              price = 0, amount = 50, info = {}, type = 'item' },
         { name = 'stretcher4',              price = 0, amount = 50, info = {}, type = 'item' },
         { name = 'stretcher5',              price = 0, amount = 50, info = {}, type = 'item' },
-        { name = 'stretcher6',              price = 0, amount = 50, info = {}, type = 'item' },
-        { name = 'stretcher7',              price = 0, amount = 50, info = {}, type = 'item' },
         { name = 'lifepak15',               price = 0, amount = 50, info = {}, type = 'item' },
         { name = 'lucas2',                  price = 0, amount = 50, info = {}, type = 'item' },
         { name = 'lucas3',                  price = 0, amount = 50, info = {}, type = 'item' },

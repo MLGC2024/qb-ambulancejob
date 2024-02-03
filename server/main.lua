@@ -387,7 +387,7 @@ end)
 	end
 end)]]
 
---added by pamela for visn areaSize
+--added by pamela for visn are
 QBCore.Commands.Add("revive", Lang:t('info.revive_player_a'), {{name = "id", help = Lang:t('info.player_id')}}, false, function(source, args)
 	local src = source
 	if args[1] then
